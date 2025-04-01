@@ -1,4 +1,3 @@
-Here's an enhanced version of your `README.md` that incorporates a clean and professional look with more engaging descriptions and sections:
 
 ```markdown
 # Crypto-Weather Dashboard

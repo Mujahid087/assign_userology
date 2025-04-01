@@ -1,5 +1,5 @@
 
-```markdown
+<!-- ```markdown -->
 # Crypto-Weather Dashboard
 
 Welcome to the **Crypto-Weather Dashboard**, your one-stop solution for monitoring live cryptocurrency prices, weather conditions, and the latest news. Built using modern web technologies, this dashboard provides real-time insights into the weather of major cities and the dynamic world of cryptocurrencies.

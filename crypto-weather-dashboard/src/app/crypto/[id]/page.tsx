@@ -1,7 +1,7 @@
 
 'use client';
 
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { useParams } from 'next/navigation'; 
 import { RootState } from '../../../store/store';

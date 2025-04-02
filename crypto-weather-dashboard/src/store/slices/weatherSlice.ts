@@ -32,7 +32,7 @@ const initialState: WeatherState = {
   lastUpdated: null,
 };
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
+
 export const defaultCities = ['New York', 'London', 'Tokyo'];
 
 

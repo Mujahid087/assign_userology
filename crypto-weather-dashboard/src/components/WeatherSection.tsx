@@ -3,6 +3,7 @@
 import { useSelector } from 'react-redux';
 import { RootState } from '../store/store';
 import WeatherCard from './WeatherCard';
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { defaultCities } from '../store/slices/weatherSlice';
 import { useState } from 'react';
 

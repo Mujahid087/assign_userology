@@ -62,7 +62,7 @@ const CityPage = () => {
   const params = useParams();
   const id = params?.id as string;
   const [history, setHistory] = useState<{ time: string; temperature: number; humidity: number }[]>([]);
-  const [currentData, setCurrentData] = useState<any>(null);
+  const [currentData, setCurrentData] = useState<T>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [cityName, setCityName] = useState<string>("");

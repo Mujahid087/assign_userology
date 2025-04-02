@@ -40,11 +40,13 @@ const WeatherCard = ({ weather }: WeatherCardProps) => {
         </button>
       </div>
       <div className="flex items-center mt-2">
-        <Image
-          src={`https://openweathermap.org/img/wn/${weather.icon}@2x.png`}
-          alt={weather.conditions}
-          className="w-16 h-16"
-        />
+      <Image
+  src={`https://openweathermap.org/img/wn/${weather.icon}@2x.png`}
+  alt={weather.conditions}
+  width={64}  // ✅ Add width
+  height={64} // ✅ Add height
+  className="w-16 h-16"
+/>
         <div className="ml-2">
           <div className="text-3xl font-bold text-gray-800">{Math.round(weather.temperature)}°C</div>
           <div className="text-gray-600 capitalize">{weather.conditions}</div>

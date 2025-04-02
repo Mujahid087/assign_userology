@@ -1,7 +1,5 @@
-
 import { createSlice, createAsyncThunk, PayloadAction } from '@reduxjs/toolkit';
 import axios from 'axios';
-
 
 export interface NewsItem {
   id: string;
@@ -10,6 +8,15 @@ export interface NewsItem {
   url: string;
   source: string;
   publishedAt: string;
+}
+
+interface NewsApiResponse {
+  article_id: string;
+  title: string;
+  description: string;
+  link: string;
+  source_id: string;
+  pubDate: string;
 }
 
 interface NewsState {
@@ -30,18 +37,20 @@ const initialState: NewsState = {
 export const fetchNews = createAsyncThunk(
   'news/fetchNews',
   async () => {
-    
     const apiKey = process.env.NEXT_PUBLIC_NEWSDATA_API_KEY;
-    const response = await axios.get(`${process.env.NEXT_PUBLIC_NEWSDATA_BASE_URL}/news`, {
-      params: {
-        apikey: apiKey,
-        q: 'cryptocurrency OR bitcoin OR ethereum',
-        language: 'en',
-        size: 5
+    const response = await axios.get<{ results: NewsApiResponse[] }>(
+      `${process.env.NEXT_PUBLIC_NEWSDATA_BASE_URL}/news`,
+      {
+        params: {
+          apikey: apiKey,
+          q: 'cryptocurrency OR bitcoin OR ethereum',
+          language: 'en',
+          size: 5,
+        },
       }
-    });
-    
-    return response.data.results.map((item: any) => ({
+    );
+
+    return response.data.results.map((item: NewsApiResponse) => ({
       id: item.article_id,
       title: item.title,
       description: item.description,

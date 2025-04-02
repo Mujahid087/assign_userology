@@ -51,7 +51,7 @@ const fetchBasicForecast = async (cityId: string) => {
   
   const data = await response.json();
 // instead of any use T
-  return data.list.map((item: T) => ({
+  return data.list.map((item: any) => ({
     time: new Date(item.dt * 1000).toLocaleDateString() + ` ${new Date(item.dt * 1000).getHours()}:00`,
     temperature: item.main.temp,
     humidity: item.main.humidity,
@@ -62,7 +62,7 @@ const CityPage = () => {
   const params = useParams();
   const id = params?.id as string;
   const [history, setHistory] = useState<{ time: string; temperature: number; humidity: number }[]>([]);
-  const [currentData, setCurrentData] = useState<T>(null);
+  const [currentData, setCurrentData] = useState<any>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [cityName, setCityName] = useState<string>("");

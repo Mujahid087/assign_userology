@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { useParams } from 'next/navigation'; 
 import { RootState } from '../../../store/store';
+import { useAppDispatch } from "../../../store/hooks"; // ✅ Correct
 import { fetchCryptoData, fetchCryptoHistory } from '../../../store/slices/cryptoSlice';
 import { Line } from 'react-chartjs-2';  
 import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend } from 'chart.js';
@@ -15,10 +16,11 @@ const CryptoDetailPage = () => {
   const params = useParams();
   const id = params?.id as string;
 
-  const dispatch = useDispatch();
+ 
   const { data, loading, error } = useSelector((state: RootState) => state.crypto);
 
   const cryptoDetails = data[id];
+  const dispatch = useAppDispatch();
 
   useEffect(() => {
     if (id && !cryptoDetails) {

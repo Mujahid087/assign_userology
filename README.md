@@ -98,3 +98,9 @@ This dashboard integrates various third-party APIs to provide real-time data:
 - **City Details**: Displays a more granular view of the weather history with charts and tables.
 - **Crypto Details**: View in-depth information about the cryptocurrency, including historical pricing, market cap, and other extended metrics.
 
+
+## 🚀 Live Demo
+Check out the deployed application:  
+👉 [Crypto Weather Dashboard](https://crypto-weather-dashboard-nine.vercel.app)
+
+
